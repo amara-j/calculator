@@ -38,6 +38,7 @@ function App() {
   const clearButtonOnClick = () => {
     updateResult(0);
     updateOperand1("");
+    updateOperand2("");
     updateOperator("");
   };
 
