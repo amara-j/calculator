@@ -49,9 +49,12 @@ function App() {
         }}
       />
       <Equals
-        onClick={() =>
-          updateResult(eval(operand1 + currentOperator + operand2))
-        }
+        onClick={() => {
+          updateResult(eval(operand1 + currentOperator + operand2));
+          updateOperand1(eval(operand1 + currentOperator + operand2));
+          updateCurrentOperator("");
+          updateOperand2("");
+        }}
       />
 
       <div> {operand1}</div>
