@@ -1,8 +1,5 @@
 import "./App.css";
-import Number from "./Number.js";
-import Operator from "./Operator.js";
-import Clear from "./Clear.js";
-import Equals from "./Equals.js";
+import Button from "./Button.js";
 import { useState } from "react";
 
 function App() {
@@ -16,9 +13,10 @@ function App() {
     let numberComponents = [];
     for (let i = 0; i < 10; i++) {
       numberComponents.push(
-        <Number
+        <Button // generate numbers 1-9 in a loop
           key={i}
-          displayNumber={i}
+          display={i}
+          containerClassName={"numberContainer"}
           onClick={() => {
             if (currentOperator === "") {
               parseInt(operand1) === 0
@@ -41,9 +39,10 @@ function App() {
       {loopNumberComponents()}
       {operators.map((operator) => {
         return (
-          <Operator
+          <Button // generate buttons for +, -, *, / in a loop
             key={operator}
-            displayOperator={operator}
+            display={operator}
+            containerClassName={"operatorContainer"}
             onClick={() => {
               if (operand1 === "") {
                 updateOperand1(0);
@@ -53,14 +52,18 @@ function App() {
           />
         );
       })}
-      <Clear
+      <Button // generate clear button
+        display={"Clear"}
+        containerClassName={"clearContainer"}
         onClick={() => {
           updateResult(0);
           updateOperand1("");
           updateCurrentOperator("");
         }}
       />
-      <Equals
+      <Button // generate equals button
+        display={"Equals"}
+        containerClassName={"equalsContainer"}
         onClick={() => {
           updateResult(eval(operand1 + currentOperator + operand2));
           updateOperand1(eval(operand1 + currentOperator + operand2));
