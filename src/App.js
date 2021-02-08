@@ -10,7 +10,7 @@ function App() {
   const [currentOperator, updateCurrentOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState(0);
-  const operators = ["+", "-", "*", "/"];
+  const operators = ["+", "-", "*", "/", "**"];
 
   const loopNumberComponents = () => {
     let numberComponents = [];
