@@ -44,11 +44,13 @@ function App() {
   };
 
   const equalsButtonOnClick = () => {
-    {
+    if (operand2 != "") {
       updateResult(operand1 + operator + operand2);
       updateOperand1(operand1 + operator + operand2);
       updateOperator("");
       updateOperand2("");
+    } else {
+      updateResult(operand1);
     }
   };
 
