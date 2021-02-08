@@ -44,13 +44,17 @@ function App() {
   };
 
   const negativeButtonOnClick = () => {
-    {
+    if (operator === "") {
       if (operand1 === "") {
-        updateOperator("*");
-        updateOperand1("-1");
+        updateOperand1("-1*");
       } else {
-        updateOperator("*");
-        updateOperand2("-1");
+        updateOperand1(operand1 + "*-1");
+      }
+    } else {
+      if (operand2 === "") {
+        updateOperand2("-1*");
+      } else {
+        updateOperand2(operand2 + "*-1");
       }
     }
   };
@@ -71,12 +75,6 @@ function App() {
     }
     return numberComponents;
   };
-
-  // useEffect(() => {
-  //   if (operand1 != "" && operator != "" && operand2 != "") {
-  //     equalsButtonOnClick();
-  //   }
-  // }, [operand1, operand2, operator]);
 
   return (
     <div className="App">
