@@ -72,11 +72,11 @@ function App() {
     return numberComponents;
   };
 
-  useEffect(() => {
-    if (operand1 != "" && operator != "" && operand2 != "") {
-      equalsButtonOnClick();
-    }
-  }, [operand1, operand2, operator]);
+  // useEffect(() => {
+  //   if (operand1 != "" && operator != "" && operand2 != "") {
+  //     equalsButtonOnClick();
+  //   }
+  // }, [operand1, operand2, operator]);
 
   return (
     <div className="App">
@@ -105,7 +105,6 @@ function App() {
           equalsButtonOnClick();
         }}
       />
-
       <Button // negative button
         display={"Negative"}
         containerClassName={"negativeContainer"}
@@ -113,7 +112,7 @@ function App() {
           negativeButtonOnClick();
         }}
       />
-      <div className="resultContainer">Result: {result}</div>
+      <div className="resultContainer">Result: {result}</div>{" "}
       <div> {operand1}</div>
       <div>{operator}</div>
       <div> {operand2}</div>
