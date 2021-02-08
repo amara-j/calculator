@@ -51,10 +51,17 @@ function App() {
       />
       <Equals
         onClick={() => {
-          updateResult(eval(operand1 + currentOperator + operand2));
-          updateOperand1(eval(operand1 + currentOperator + operand2));
-          updateCurrentOperator("");
-          updateOperand2("");
+          if (operand1 === "") {
+            updateResult(eval("0" + currentOperator + operand2));
+            updateOperand1(eval("0" + currentOperator + operand2));
+            updateCurrentOperator("");
+            updateOperand2("");
+          } else {
+            updateResult(eval(operand1 + currentOperator + operand2));
+            updateOperand1(eval(operand1 + currentOperator + operand2));
+            updateCurrentOperator("");
+            updateOperand2("");
+          }
         }}
       />
 

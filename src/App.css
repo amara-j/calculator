@@ -3,32 +3,32 @@
 }
 
 .numberContainer {
-  border: 1px solid gold;
+  border: 2px solid gold;
   width: 50px;
   margin: 10px;
 }
 
 .operatorContainer {
-  border: 1px solid hotpink;
+  border: 2px solid hotpink;
   width: 50px;
   margin: 10px;
 }
 
 .clearContainer {
-  border: 1px solid skyblue;
+  border: 2px solid skyblue;
   width: 50px;
   margin: 10px;
 }
 
 .equalsContainer {
-  border: 1px solid skyblue;
+  border: 2px solid skyblue;
   width: 50px;
   margin: 10px;
 }
 
 .resultContainer {
   border: 2px solid black;
-  width: 100px;
+  width: 500px;
   height: 100px;
   margin: 10px;
 }
