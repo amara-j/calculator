@@ -19,11 +19,17 @@ function App() {
         <Number
           key={i}
           displayNumber={i}
-          onClick={
-            currentOperator === ""
-              ? () => updateOperand1(operand1.toString() + i.toString())
-              : () => updateOperand2(operand2.toString() + i.toString())
-          }
+          onClick={() => {
+            if (currentOperator === "") {
+              parseInt(operand1) === 0
+                ? updateOperand1(i.toString())
+                : updateOperand1(operand1.toString() + i.toString());
+            } else {
+              parseInt(operand2) === 0
+                ? updateOperand2(i.toString())
+                : updateOperand2(operand2.toString() + i.toString());
+            }
+          }}
         />
       );
     }
