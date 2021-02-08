@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Number from "./Number.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Number displayNumber={1}></Number>
+      <Number displayNumber={2}></Number>
+      <Number displayNumber={3}></Number>
+      <Number displayNumber={4}></Number>
+      <Number displayNumber={5}></Number>
+      <Number displayNumber={6}></Number>
+      <Number displayNumber={7}></Number>
     </div>
   );
 }
