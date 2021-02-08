@@ -6,8 +6,9 @@ import Equals from "./Equals.js";
 import { useState } from "react";
 
 function App() {
-  const [currentNumber, updateCurrentNumber] = useState("");
+  const [operand1, updateOperand1] = useState(0);
   const [currentOperator, updateCurrentOperator] = useState("");
+  const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState("");
   const operators = ["+", "-", "X", "%"];
 
@@ -20,9 +21,8 @@ function App() {
           displayNumber={i}
           onClick={
             currentOperator === ""
-              ? () =>
-                  updateCurrentNumber(currentNumber.toString() + i.toString())
-              : () => updateCurrentNumber(i)
+              ? () => updateOperand1(operand1.toString() + i.toString())
+              : () => updateOperand2(operand2.toString() + i.toString())
           }
         />
       );
@@ -44,13 +44,14 @@ function App() {
       })}
       <Clear
         onClick={() => {
-          updateCurrentNumber("");
+          updateOperand1("");
           updateCurrentOperator("");
         }}
       />
       <Equals onClick={() => console.log("equals")} />
-      <div>Current number: {currentNumber}</div>
-      <div>Current operator: {currentOperator}</div>
+      <div> Operand 1: {operand1}</div>
+      <div>Operator: {currentOperator}</div>
+      <div> Operand 2: {operand2}</div>
       <div className="resultContainer">Result: {result}</div>
     </div>
   );
