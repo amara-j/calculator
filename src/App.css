@@ -19,3 +19,16 @@
   width: 50px;
   margin: 10px;
 }
+
+.equalsContainer {
+  border: 1px solid skyblue;
+  width: 50px;
+  margin: 10px;
+}
+
+.resultContainer {
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}

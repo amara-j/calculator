@@ -2,11 +2,13 @@ import "./App.css";
 import Number from "./Number.js";
 import Operator from "./Operator.js";
 import Clear from "./Clear.js";
+import Equals from "./Equals.js";
 import { useState } from "react";
 
 function App() {
   const [currentNumber, updateCurrentNumber] = useState("");
   const [currentOperator, updateCurrentOperator] = useState("");
+  const [result, updateResult] = useState("");
   const operators = ["+", "-", "X", "%"];
 
   const loopNumberComponents = () => {
@@ -46,8 +48,10 @@ function App() {
           updateCurrentOperator("");
         }}
       />
+      <Equals onClick={() => console.log("equals")} />
       <div>Current number: {currentNumber}</div>
       <div>Current operator: {currentOperator}</div>
+      <div className="resultContainer">Result: {result}</div>
     </div>
   );
 }
