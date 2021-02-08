@@ -96,18 +96,24 @@ function App() {
   };
 
   const handleKeyDown = (e) => {
-    console.log(e);
+    console.log(e.code);
     // numbers
     if (e.code.slice(0, 5) === "Digit" && e.shiftKey === false) {
       numberButtonOnClick(e.code.slice(-1));
+      //negative number, but not minus
+    } else if (e.code === "Minus" && operand1 === "") {
+      negativeButtonOnClick();
     }
-    if (operator_array.includes(e.key)) {
+    //operators
+    else if (operator_array.includes(e.key)) {
       operatorButtonOnClick(e.key);
     }
-    if (e.code === "Enter") {
+    //enter
+    else if (e.code === "Enter") {
       equalsButtonOnClick();
     }
-    if (e.code === "Backspace") {
+    //delete
+    else if (e.code === "Backspace") {
       handleDelete();
     }
   };
