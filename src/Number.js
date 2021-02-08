@@ -1,7 +1,11 @@
 import React from "react";
 
 const Number = (props) => {
-  return <div className="numberContainer">{props.displayNumber}</div>;
+  return (
+    <div className="numberContainer" onClick={props.onClick}>
+      {props.displayNumber}
+    </div>
+  );
 };
 
 export default Number;

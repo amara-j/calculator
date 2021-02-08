@@ -3,5 +3,7 @@
 }
 
 .numberContainer {
-  border: 2px solid black;
+  border: 1px solid gold;
+  width: 50px;
+  margin: 10px;
 }
