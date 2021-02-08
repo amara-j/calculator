@@ -7,3 +7,15 @@
   width: 50px;
   margin: 10px;
 }
+
+.operatorContainer {
+  border: 1px solid hotpink;
+  width: 50px;
+  margin: 10px;
+}
+
+.clearContainer {
+  border: 1px solid skyblue;
+  width: 50px;
+  margin: 10px;
+}
