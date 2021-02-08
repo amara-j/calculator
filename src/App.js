@@ -1,16 +1,16 @@
 import "./App.css";
 import Button from "./Button.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [operand1, updateOperand1] = useState("");
-  const [currentOperator, updateCurrentOperator] = useState("");
+  const [operator, updateOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState(0);
-  const operators = ["+", "-", "*", "/", "**"];
+  const operator_array = ["+", "-", "*", "/", "**"];
 
   const numberButtonOnClick = (i) => {
-    if (currentOperator === "") {
+    if (operator === "") {
       parseInt(operand1) === 0
         ? updateOperand1(i.toString())
         : updateOperand1(operand1.toString() + i.toString());
@@ -25,20 +25,20 @@ function App() {
     if (operand1 === "") {
       updateOperand1(0);
     }
-    updateCurrentOperator(operator);
+    updateOperator(operator);
   };
 
   const clearButtonOnClick = () => {
     updateResult(0);
     updateOperand1("");
-    updateCurrentOperator("");
+    updateOperator("");
   };
 
   const equalsButtonOnClick = () => {
     {
-      updateResult(eval(operand1 + currentOperator + operand2));
-      updateOperand1(eval(operand1 + currentOperator + operand2));
-      updateCurrentOperator("");
+      updateResult(eval(operand1 + operator + operand2));
+      updateOperand1(eval(operand1 + operator + operand2));
+      updateOperator("");
       updateOperand2("");
     }
   };
@@ -46,10 +46,10 @@ function App() {
   const negativeButtonOnClick = () => {
     {
       if (operand1 === "") {
-        updateCurrentOperator("*");
+        updateOperator("*");
         updateOperand1("-1");
       } else {
-        updateCurrentOperator("*");
+        updateOperator("*");
         updateOperand2("-1");
       }
     }
@@ -72,10 +72,16 @@ function App() {
     return numberComponents;
   };
 
+  useEffect(() => {
+    if (operand1 != "" && operator != "" && operand2 != "") {
+      equalsButtonOnClick();
+    }
+  }, [operand1, operand2, operator]);
+
   return (
     <div className="App">
       {loopNumberComponents()}
-      {operators.map((operator) => {
+      {operator_array.map((operator) => {
         return (
           <Button // generate buttons for +, -, *, /, ** in a loop
             key={operator}
@@ -107,10 +113,10 @@ function App() {
           negativeButtonOnClick();
         }}
       />
-      <div> {operand1}</div>
-      <div>{currentOperator}</div>
-      <div> {operand2}</div>
       <div className="resultContainer">Result: {result}</div>
+      <div> {operand1}</div>
+      <div>{operator}</div>
+      <div> {operand2}</div>
     </div>
   );
 }
