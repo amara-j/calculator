@@ -6,11 +6,11 @@ import Equals from "./Equals.js";
 import { useState } from "react";
 
 function App() {
-  const [operand1, updateOperand1] = useState(0);
+  const [operand1, updateOperand1] = useState("");
   const [currentOperator, updateCurrentOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState("");
-  const operators = ["+", "-", "X", "%"];
+  const operators = ["+", "-", "*", "%"];
 
   const loopNumberComponents = () => {
     let numberComponents = [];
@@ -48,10 +48,15 @@ function App() {
           updateCurrentOperator("");
         }}
       />
-      <Equals onClick={() => console.log("equals")} />
-      <div> Operand 1: {operand1}</div>
-      <div>Operator: {currentOperator}</div>
-      <div> Operand 2: {operand2}</div>
+      <Equals
+        onClick={() =>
+          updateResult(eval(operand1 + currentOperator + operand2))
+        }
+      />
+
+      <div> {operand1}</div>
+      <div>{currentOperator}</div>
+      <div> {operand2}</div>
       <div className="resultContainer">Result: {result}</div>
     </div>
   );
