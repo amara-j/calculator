@@ -21,11 +21,18 @@ function App() {
     }
   };
 
-  const operatorButtonOnClick = (operator) => {
+  const operatorButtonOnClick = (element) => {
     if (operand1 === "") {
       updateOperand1(0);
     }
-    updateOperator(operator);
+    updateOperator(element);
+    //if operator already full,
+    if (operator != "") {
+      updateResult(eval(operand1 + operator + operand2));
+      updateOperand1(eval(operand1 + operator + operand2));
+      updateOperator(element);
+      updateOperand2("");
+    }
   };
 
   const clearButtonOnClick = () => {
@@ -79,14 +86,14 @@ function App() {
   return (
     <div className="App">
       {loopNumberComponents()}
-      {operator_array.map((operator) => {
+      {operator_array.map((element) => {
         return (
           <Button // generate buttons for +, -, *, /, ** in a loop
-            key={operator}
-            display={operator}
+            key={element}
+            display={element}
             containerClassName={"operatorContainer"}
             onClick={() => {
-              operatorButtonOnClick(operator);
+              operatorButtonOnClick(element);
             }}
           />
         );
@@ -111,9 +118,7 @@ function App() {
         }}
       />
       <div className="resultContainer">Result: {result}</div>{" "}
-      <div> {operand1}</div>
-      <div>{operator}</div>
-      <div> {operand2}</div>
+      <div> {operand1 + operator + operand2}</div>
     </div>
   );
 }
