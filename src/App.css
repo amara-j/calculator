@@ -26,6 +26,12 @@
   margin: 10px;
 }
 
+.negativeContainer {
+  border: 2px solid greenyellow;
+  width: 70px;
+  margin: 10px;
+}
+
 .resultContainer {
   border: 2px solid black;
   width: 500px;
