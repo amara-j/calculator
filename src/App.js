@@ -38,7 +38,12 @@ function App() {
           <Operator
             key={operator}
             displayOperator={operator}
-            onClick={() => updateCurrentOperator(operator)}
+            onClick={() => {
+              if (operand1 === "") {
+                updateOperand1(0);
+              }
+              updateCurrentOperator(operator);
+            }}
           />
         );
       })}
@@ -51,17 +56,10 @@ function App() {
       />
       <Equals
         onClick={() => {
-          if (operand1 === "") {
-            updateResult(eval("0" + currentOperator + operand2));
-            updateOperand1(eval("0" + currentOperator + operand2));
-            updateCurrentOperator("");
-            updateOperand2("");
-          } else {
-            updateResult(eval(operand1 + currentOperator + operand2));
-            updateOperand1(eval(operand1 + currentOperator + operand2));
-            updateCurrentOperator("");
-            updateOperand2("");
-          }
+          updateResult(eval(operand1 + currentOperator + operand2));
+          updateOperand1(eval(operand1 + currentOperator + operand2));
+          updateCurrentOperator("");
+          updateOperand2("");
         }}
       />
 
