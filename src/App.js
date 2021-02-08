@@ -9,8 +9,8 @@ function App() {
   const [operand1, updateOperand1] = useState("");
   const [currentOperator, updateCurrentOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
-  const [result, updateResult] = useState("");
-  const operators = ["+", "-", "*", "%"];
+  const [result, updateResult] = useState(0);
+  const operators = ["+", "-", "*", "/"];
 
   const loopNumberComponents = () => {
     let numberComponents = [];
@@ -44,6 +44,7 @@ function App() {
       })}
       <Clear
         onClick={() => {
+          updateResult(0);
           updateOperand1("");
           updateCurrentOperator("");
         }}
