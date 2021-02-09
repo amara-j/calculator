@@ -132,6 +132,9 @@ function Calculator() {
       //negative number, but not minus
     } else if (e.code === "Minus" && operand1 === "") {
       negativeButtonOnClick();
+      // decimal point
+    } else if (e.key === ".") {
+      decimalButtonOnClick();
     }
     //operators
     else if (operator_array.includes(e.key)) {
