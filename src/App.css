@@ -1,21 +1,30 @@
+.App {
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
 .calculatorButtons {
   text-align: center;
   display: grid;
-  grid-template-columns: 110px 110px 110px 110px;
-  grid-template-rows: 110px 110px 110px 110px;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: repeat(4, 130px);
+  justify-items: center;
 }
 
 .calculatorDisplay {
   text-align: center;
   display: grid;
-  grid-template-columns: 110px 110px 110px 110px;
-  grid-template-rows: 110px;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: 90px;
 }
 
 .clearContainer {
   border: 2px solid skyblue;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 5px 5px 5px 5px;
   grid-column: 1;
   grid-row: 1;
@@ -73,14 +82,14 @@
 
 .numberContainer {
   border: 2px solid black;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 5px 5px 5px 5px;
 }
 .equalsContainer {
   border: 2px solid skyblue;
-  width: 100px;
-  height: 210px;
+  width: 120px;
+  height: 250px;
   margin: 5px 5px 5px 5px;
   grid-column: 4;
   grid-row: 4 / 5;
@@ -88,29 +97,29 @@
 
 .decimalContainer {
   border: 2px solid greenyellow;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .operatorContainer {
   border: 2px solid hotpink;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .negativeContainer {
   border: 2px solid greenyellow;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .expressionContainer {
   border: 2px solid red;
-  width: 210px;
-  height: 100px;
+  width: 250px;
+  height: 80px;
   grid-column: 1 /2;
   margin: 5px 5px 5px 5px;
   grid-row: 1;
@@ -118,9 +127,9 @@
 
 .resultContainer {
   border: 2px solid blue;
-  width: 210px;
+  width: 250px;
   margin: 5px 5px 5px 5px;
-  height: 100px;
+  height: 80px;
   grid-column: 3/4;
   grid-row: 1;
 }
