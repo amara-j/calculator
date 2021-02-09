@@ -86,6 +86,18 @@ function Calculator() {
     }
   };
 
+  const decimalButtonOnClick = () => {
+    if (operator === "") {
+      if (!operand1.includes(".")) {
+        updateOperand1(operand1.toString() + ".");
+      }
+    } else {
+      if (!operand2.includes(".")) {
+        updateOperand2(operand2.toString() + ".");
+      }
+    }
+  };
+
   const loopNumberComponents = () => {
     let numberComponents = [];
     for (let i = 0; i < 10; i++) {
@@ -143,6 +155,13 @@ function Calculator() {
   return (
     <div className="App">
       {loopNumberComponents()}
+      <Button // decimal point button
+        display={"."}
+        containerClassName={"numberContainer"}
+        onClick={() => {
+          decimalButtonOnClick();
+        }}
+      />
       {operator_array.map((element) => {
         return (
           <Button // generate buttons for +, -, *, /, ** in a loop
