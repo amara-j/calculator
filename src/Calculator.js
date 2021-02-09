@@ -106,6 +106,7 @@ function Calculator() {
           key={i}
           display={i}
           containerClassName={"numberContainer"}
+          containerID={`number${i}Container`}
           onClick={() => {
             numberButtonOnClick(i);
           }}
