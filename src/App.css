@@ -1,8 +1,67 @@
 .App {
   text-align: center;
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 110px 110px 110px 110px;
-  grid-template-rows: auto;
+  grid-template-rows: 110px 110px 110px 110px;
+}
+
+.clearContainer {
+  border: 2px solid skyblue;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#number1Container {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#number2Container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#number3Container {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#number4Container {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#number5Container {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#number6Container {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+#number7ontainer {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+#number8Container {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+#number9Container {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+#number0Container {
+  grid-column: 1;
+  grid-row: 5;
 }
 
 .numberContainer {
@@ -14,6 +73,15 @@
 .equalsContainer {
   border: 2px solid skyblue;
   width: 100px;
+  height: 210px;
+  margin: 5px 5px 5px 5px;
+  grid-column: 4;
+  grid-row: 4 / 5;
+}
+
+.decimalContainer {
+  border: 2px solid greenyellow;
+  width: 100px;
   height: 100px;
   margin: 5px 5px 5px 5px;
 }
@@ -24,20 +92,12 @@
   height: 100px;
   margin: 5px 5px 5px 5px;
 }
-.clearContainer {
-  border: 2px solid skyblue;
-  width: 100px;
-  height: 100px;
-  margin: 5px 5px 5px 5px;
-}
 
 .negativeContainer {
   border: 2px solid greenyellow;
   width: 100px;
   height: 100px;
   margin: 5px 5px 5px 5px;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
 }
 
 .resultContainer {
@@ -45,4 +105,6 @@
   width: 500px;
   height: 100px;
   margin: 10px;
+  grid-column: 1;
+  grid-row: 6;
 }

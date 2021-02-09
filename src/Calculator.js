@@ -158,21 +158,6 @@ function Calculator() {
 
   return (
     <div className="App">
-      {loopNumberComponents()}
-      <Button // decimal point button
-        display={"."}
-        containerClassName={"numberContainer"}
-        onClick={() => {
-          decimalButtonOnClick();
-        }}
-      />
-      <Button // equals button
-        display={"Equals"}
-        containerClassName={"equalsContainer"}
-        onClick={() => {
-          equalsButtonOnClick();
-        }}
-      />
       {operator_array.map((element) => {
         return (
           <Button // buttons for +, -, *, /, ** in a loop
@@ -185,6 +170,21 @@ function Calculator() {
           />
         );
       })}
+      {loopNumberComponents()}
+      <Button // decimal point button
+        display={"."}
+        containerClassName={"decimalContainer"}
+        onClick={() => {
+          decimalButtonOnClick();
+        }}
+      />
+      <Button // equals button
+        display={"Equals"}
+        containerClassName={"equalsContainer"}
+        onClick={() => {
+          equalsButtonOnClick();
+        }}
+      />
       <Button //  clear button
         display={"Clear"}
         containerClassName={"clearContainer"}
