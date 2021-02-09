@@ -1,8 +1,15 @@
-.App {
+.calculatorButtons {
   text-align: center;
-  display: inline-grid;
+  display: grid;
   grid-template-columns: 110px 110px 110px 110px;
   grid-template-rows: 110px 110px 110px 110px;
+}
+
+.calculatorDisplay {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 110px 110px 110px 110px;
+  grid-template-rows: 110px;
 }
 
 .clearContainer {
@@ -100,11 +107,20 @@
   margin: 5px 5px 5px 5px;
 }
 
-.resultContainer {
-  border: 2px solid black;
-  width: 500px;
+.expressionContainer {
+  border: 2px solid red;
+  width: 210px;
   height: 100px;
-  margin: 10px;
-  grid-column: 1;
-  grid-row: 6;
+  grid-column: 1 /2;
+  margin: 5px 5px 5px 5px;
+  grid-row: 1;
+}
+
+.resultContainer {
+  border: 2px solid blue;
+  width: 210px;
+  margin: 5px 5px 5px 5px;
+  height: 100px;
+  grid-column: 3/4;
+  grid-row: 1;
 }

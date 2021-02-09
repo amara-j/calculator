@@ -158,49 +158,55 @@ function Calculator() {
 
   return (
     <div className="App">
-      {operator_array.map((element) => {
-        return (
-          <Button // buttons for +, -, *, /, ** in a loop
-            key={element}
-            display={element}
-            containerClassName={"operatorContainer"}
-            onClick={() => {
-              operatorButtonOnClick(element);
-            }}
-          />
-        );
-      })}
-      {loopNumberComponents()}
-      <Button // decimal point button
-        display={"."}
-        containerClassName={"decimalContainer"}
-        onClick={() => {
-          decimalButtonOnClick();
-        }}
-      />
-      <Button // equals button
-        display={"Equals"}
-        containerClassName={"equalsContainer"}
-        onClick={() => {
-          equalsButtonOnClick();
-        }}
-      />
-      <Button //  clear button
-        display={"Clear"}
-        containerClassName={"clearContainer"}
-        onClick={() => clearButtonOnClick()}
-      />
-      <Button // negative button
-        display={"Negative"}
-        containerClassName={"negativeContainer"}
-        onClick={() => {
-          negativeButtonOnClick();
-        }}
-      />
-      <div className="resultContainer">
-        {checkResultError(eval(handleIncompleteResult(result)))}
-      </div>{" "}
-      <div>{operand1 + operator + operand2}</div>
+      <div className="calculatorDisplay">
+        <div className="resultContainer">
+          {checkResultError(eval(handleIncompleteResult(result)))}
+        </div>{" "}
+        <div className="expressionContainer">
+          {operand1 + operator + operand2}
+        </div>
+      </div>
+      <div className="calculatorButtons">
+        {operator_array.map((element) => {
+          return (
+            <Button // buttons for +, -, *, /, ** in a loop
+              key={element}
+              display={element}
+              containerClassName={"operatorContainer"}
+              onClick={() => {
+                operatorButtonOnClick(element);
+              }}
+            />
+          );
+        })}
+        {loopNumberComponents()}
+        <Button // decimal point button
+          display={"."}
+          containerClassName={"decimalContainer"}
+          onClick={() => {
+            decimalButtonOnClick();
+          }}
+        />
+        <Button // equals button
+          display={"Equals"}
+          containerClassName={"equalsContainer"}
+          onClick={() => {
+            equalsButtonOnClick();
+          }}
+        />
+        <Button //  clear button
+          display={"Clear"}
+          containerClassName={"clearContainer"}
+          onClick={() => clearButtonOnClick()}
+        />
+        <Button // negative button
+          display={"Negative"}
+          containerClassName={"negativeContainer"}
+          onClick={() => {
+            negativeButtonOnClick();
+          }}
+        />
+      </div>
     </div>
   );
 }
