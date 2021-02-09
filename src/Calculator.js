@@ -26,7 +26,11 @@ function Calculator() {
     }
     updateOperator(element);
     //if operator already full,
-    if (operator != "") {
+    if (operator != "" && operand2 == "") {
+      updateOperator(element);
+      updateOperand2("");
+    }
+    if (operator != "" && operand2 != "") {
       updateResult(operand1 + operator + operand2);
       updateOperand1(operand1 + operator + operand2);
       updateOperator(element);
@@ -164,8 +168,17 @@ function Calculator() {
           negativeButtonOnClick();
         }}
       />
-      <div className="resultContainer">{checkResultError(eval(result))}</div>{" "}
-      <div> {operand1 + operator + operand2}</div>
+      {/* <div className="resultContainer">{checkResultError(eval(result))}</div>{" "} */}
+      <div> show me the result: {result}</div>{" "}
+      <div>
+        {" "}
+        {"operand1: " +
+          operand1 +
+          " operator: " +
+          operator +
+          " operand2: " +
+          operand2}
+      </div>
     </div>
   );
 }
