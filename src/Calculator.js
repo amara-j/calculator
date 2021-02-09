@@ -52,6 +52,13 @@ function Calculator() {
     }
   };
 
+  const checkResultError = (answer) => {
+    if (Number.isNaN(answer)) {
+      return "Error! Enter another expression.";
+    }
+    return answer;
+  };
+
   const negativeButtonOnClick = () => {
     if (operator === "") {
       if (operand1 === "") {
@@ -157,7 +164,7 @@ function Calculator() {
           negativeButtonOnClick();
         }}
       />
-      <div className="resultContainer">Result: {eval(result)}</div>{" "}
+      <div className="resultContainer">{checkResultError(eval(result))}</div>{" "}
       <div> {operand1 + operator + operand2}</div>
     </div>
   );
