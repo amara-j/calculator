@@ -63,6 +63,13 @@ function Calculator() {
     return answer;
   };
 
+  const handleIncompleteResult = (answer) => {
+    if (operator_array.includes(answer.toString().slice(-1))) {
+      return answer.toString().slice(0, -1);
+    }
+    return answer;
+  };
+
   const negativeButtonOnClick = () => {
     if (operator === "") {
       if (operand1 === "") {
@@ -107,7 +114,6 @@ function Calculator() {
   };
 
   const handleKeyDown = (e) => {
-    console.log(e.code);
     // numbers
     if (e.code.slice(0, 5) === "Digit" && e.shiftKey === false) {
       numberButtonOnClick(e.code.slice(-1));
@@ -168,17 +174,10 @@ function Calculator() {
           negativeButtonOnClick();
         }}
       />
-      {/* <div className="resultContainer">{checkResultError(eval(result))}</div>{" "} */}
-      <div> show me the result: {result}</div>{" "}
-      <div>
-        {" "}
-        {"operand1: " +
-          operand1 +
-          " operator: " +
-          operator +
-          " operand2: " +
-          operand2}
-      </div>
+      <div className="resultContainer">
+        {checkResultError(eval(handleIncompleteResult(result)))}
+      </div>{" "}
+      <div>{operand1 + operator + operand2}</div>
     </div>
   );
 }
