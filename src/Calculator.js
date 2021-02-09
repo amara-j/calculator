@@ -165,9 +165,16 @@ function Calculator() {
           decimalButtonOnClick();
         }}
       />
+      <Button // equals button
+        display={"Equals"}
+        containerClassName={"equalsContainer"}
+        onClick={() => {
+          equalsButtonOnClick();
+        }}
+      />
       {operator_array.map((element) => {
         return (
-          <Button // generate buttons for +, -, *, /, ** in a loop
+          <Button // buttons for +, -, *, /, ** in a loop
             key={element}
             display={element}
             containerClassName={"operatorContainer"}
@@ -177,17 +184,10 @@ function Calculator() {
           />
         );
       })}
-      <Button // generate clear button
+      <Button //  clear button
         display={"Clear"}
         containerClassName={"clearContainer"}
         onClick={() => clearButtonOnClick()}
-      />
-      <Button // generate equals button
-        display={"Equals"}
-        containerClassName={"equalsContainer"}
-        onClick={() => {
-          equalsButtonOnClick();
-        }}
       />
       <Button // negative button
         display={"Negative"}

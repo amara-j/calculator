@@ -1,38 +1,41 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-columns: 110px 110px 110px 110px;
   grid-template-rows: auto;
 }
 
 .numberContainer {
-  border: 2px solid gold;
-  width: 50px;
-  margin: 10px;
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
+}
+.equalsContainer {
+  border: 2px solid skyblue;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
 }
 
 .operatorContainer {
   border: 2px solid hotpink;
-  width: 50px;
-  margin: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
 }
-
 .clearContainer {
   border: 2px solid skyblue;
-  width: 50px;
-  margin: 10px;
-}
-
-.equalsContainer {
-  border: 2px solid skyblue;
-  width: 50px;
-  margin: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
 }
 
 .negativeContainer {
   border: 2px solid greenyellow;
-  width: 70px;
-  margin: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px 5px 5px;
 }
 
 .resultContainer {
