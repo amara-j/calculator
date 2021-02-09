@@ -9,7 +9,7 @@
 .calculatorButtons {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(4, 130px);
+  grid-template-columns: repeat(4, 250px);
   grid-template-rows: repeat(4, 130px);
   justify-items: center;
 }
@@ -17,13 +17,13 @@
 .calculatorDisplay {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(4, 130px);
+  grid-template-columns: repeat(4, 250px);
   grid-template-rows: 90px;
 }
 
 .clearContainer {
   border: 2px solid skyblue;
-  width: 120px;
+  width: 240px;
   height: 120px;
   margin: 5px 5px 5px 5px;
   grid-column: 1;
@@ -82,13 +82,13 @@
 
 .numberContainer {
   border: 2px solid black;
-  width: 120px;
+  width: 240px;
   height: 120px;
   margin: 5px 5px 5px 5px;
 }
 .equalsContainer {
   border: 2px solid skyblue;
-  width: 120px;
+  width: 240px;
   height: 250px;
   margin: 5px 5px 5px 5px;
   grid-column: 4;
@@ -97,28 +97,28 @@
 
 .decimalContainer {
   border: 2px solid greenyellow;
-  width: 120px;
+  width: 240px;
   height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .operatorContainer {
   border: 2px solid hotpink;
-  width: 120px;
+  width: 240px;
   height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .negativeContainer {
   border: 2px solid greenyellow;
-  width: 120px;
+  width: 240px;
   height: 120px;
   margin: 5px 5px 5px 5px;
 }
 
 .expressionContainer {
   border: 2px solid red;
-  width: 250px;
+  width: 490px;
   height: 80px;
   grid-column: 1 /2;
   margin: 5px 5px 5px 5px;
@@ -127,7 +127,7 @@
 
 .resultContainer {
   border: 2px solid blue;
-  width: 250px;
+  width: 490px;
   margin: 5px 5px 5px 5px;
   height: 80px;
   grid-column: 3/4;
