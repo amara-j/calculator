@@ -4,6 +4,7 @@
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
+  font-size: 80px;
 }
 
 .calculatorButtons {
@@ -18,7 +19,7 @@
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 250px);
-  grid-template-rows: 90px;
+  grid-template-rows: 300px;
 }
 
 .clearContainer {
@@ -119,7 +120,7 @@
 .expressionContainer {
   border: 2px solid red;
   width: 490px;
-  height: 80px;
+  height: 300px;
   grid-column: 1 /2;
   margin: 5px 5px 5px 5px;
   grid-row: 1;
@@ -129,7 +130,7 @@
   border: 2px solid blue;
   width: 490px;
   margin: 5px 5px 5px 5px;
-  height: 80px;
+  height: 300px;
   grid-column: 3/4;
   grid-row: 1;
 }

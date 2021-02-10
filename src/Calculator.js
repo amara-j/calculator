@@ -70,6 +70,24 @@ function Calculator() {
     return answer;
   };
 
+  const handleExponentOperatorDisplay = (operator) => {
+    if (operator.length != 0) {
+      const opString = operator.toString();
+      let re = /\*\*/g;
+      return opString.replace(re, `^`);
+    }
+    return operator;
+  };
+
+  const regExpsTest = () => {
+    const lawyer = "Im not a cat i just ** look ** like a cat";
+    console.log(lawyer);
+    let re = /\*\*/g;
+    // let re = new RegExp('\*\*', "g");
+    const fixed = lawyer.replace(re, "lawyer");
+    console.log(fixed);
+  };
+
   const negativeButtonOnClick = () => {
     if (operator === "") {
       if (operand1 === "") {
@@ -148,6 +166,9 @@ function Calculator() {
     //delete
     else if (e.code === "Backspace") {
       handleDelete();
+      //handle exponent case- should be ^ key but js recognizes it as **
+    } else if (e.key === "^") {
+      operatorButtonOnClick("**");
     }
   };
 
@@ -163,7 +184,7 @@ function Calculator() {
           {checkResultError(eval(handleIncompleteResult(result)))}
         </div>{" "}
         <div className="expressionContainer">
-          {operand1 + operator + operand2}
+          {operand1 + handleExponentOperatorDisplay(operator) + operand2}
         </div>
       </div>
       <div className="calculatorButtons">
@@ -188,19 +209,19 @@ function Calculator() {
           }}
         />
         <Button // equals button
-          display={"Equals"}
+          display={"="}
           containerClassName={"equalsContainer"}
           onClick={() => {
             equalsButtonOnClick();
           }}
         />
         <Button //  clear button
-          display={"Clear"}
+          display={"AC"}
           containerClassName={"clearContainer"}
           onClick={() => clearButtonOnClick()}
         />
         <Button // negative button
-          display={"Negative"}
+          display={"-x"}
           containerClassName={"negativeContainer"}
           onClick={() => {
             negativeButtonOnClick();
