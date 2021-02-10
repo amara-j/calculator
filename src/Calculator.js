@@ -53,14 +53,13 @@ function Calculator() {
     toggleEvaluatedState(false);
     if (operand2 != "") {
       updateResult(operand1 + operator + operand2);
-      updateOperand1(operand1 + operator + operand2);
+      updateOperand1(eval(operand1 + operator + operand2));
       updateOperator("");
       updateOperand2("");
     } else {
       updateResult(operand1);
     }
     toggleEvaluatedState(true);
-    console.log(isExpressionEvaluated);
   };
 
   const checkResultError = (answer) => {
