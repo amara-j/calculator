@@ -117,20 +117,11 @@
   margin: 5px 5px 5px 5px;
 }
 
-.expressionContainer {
+.calculatorDisplay {
   border: 2px solid red;
-  width: 490px;
+  width: 1000px;
   height: 300px;
   grid-column: 1 /2;
   margin: 5px 5px 5px 5px;
-  grid-row: 1;
-}
-
-.resultContainer {
-  border: 2px solid blue;
-  width: 490px;
-  margin: 5px 5px 5px 5px;
-  height: 300px;
-  grid-column: 3/4;
   grid-row: 1;
 }

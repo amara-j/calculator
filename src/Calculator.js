@@ -7,8 +7,10 @@ function Calculator() {
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState(0);
   const operator_array = ["+", "-", "*", "/", "**"];
+  const [isExpressionEvaluated, toggleEvaluatedState] = useState(false);
 
   const numberButtonOnClick = (i) => {
+    toggleEvaluatedState(false);
     if (operator === "") {
       parseInt(operand1) === 0
         ? updateOperand1(i.toString())
@@ -21,6 +23,7 @@ function Calculator() {
   };
 
   const operatorButtonOnClick = (element) => {
+    toggleEvaluatedState(false);
     if (operand1 === "") {
       updateOperand1(0);
     }
@@ -39,6 +42,7 @@ function Calculator() {
   };
 
   const clearButtonOnClick = () => {
+    toggleEvaluatedState(false);
     updateResult(0);
     updateOperand1("");
     updateOperand2("");
@@ -46,6 +50,7 @@ function Calculator() {
   };
 
   const equalsButtonOnClick = () => {
+    toggleEvaluatedState(false);
     if (operand2 != "") {
       updateResult(operand1 + operator + operand2);
       updateOperand1(operand1 + operator + operand2);
@@ -54,6 +59,8 @@ function Calculator() {
     } else {
       updateResult(operand1);
     }
+    toggleEvaluatedState(true);
+    console.log(isExpressionEvaluated);
   };
 
   const checkResultError = (answer) => {
@@ -79,16 +86,8 @@ function Calculator() {
     return operator;
   };
 
-  const regExpsTest = () => {
-    const lawyer = "Im not a cat i just ** look ** like a cat";
-    console.log(lawyer);
-    let re = /\*\*/g;
-    // let re = new RegExp('\*\*', "g");
-    const fixed = lawyer.replace(re, "lawyer");
-    console.log(fixed);
-  };
-
   const negativeButtonOnClick = () => {
+    toggleEvaluatedState(false);
     if (operator === "") {
       if (operand1 === "") {
         updateOperand1("-1*");
@@ -105,6 +104,7 @@ function Calculator() {
   };
 
   const decimalButtonOnClick = () => {
+    toggleEvaluatedState(false);
     if (operator === "") {
       if (!operand1.includes(".")) {
         updateOperand1(operand1.toString() + ".");
@@ -180,12 +180,9 @@ function Calculator() {
   return (
     <div className="App">
       <div className="calculatorDisplay">
-        <div className="resultContainer">
-          {checkResultError(eval(handleIncompleteResult(result)))}
-        </div>{" "}
-        <div className="expressionContainer">
-          {operand1 + handleExponentOperatorDisplay(operator) + operand2}
-        </div>
+        {isExpressionEvaluated
+          ? checkResultError(eval(handleIncompleteResult(result)))
+          : operand1 + handleExponentOperatorDisplay(operator) + operand2}
       </div>
       <div className="calculatorButtons">
         {operator_array.map((element) => {
