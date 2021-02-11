@@ -6,7 +6,8 @@ function Calculator() {
   const [operator, updateOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState(0);
-  const operator_array = ["+", "-"];
+  const operator_array_display = ["+", "-"];
+  const operator_array = ["+", "-", "*", "**", "/"];
   const [isExpressionEvaluated, toggleEvaluatedState] = useState(false);
 
   const numberButtonOnClick = (i) => {
@@ -84,7 +85,6 @@ function Calculator() {
     }
     if (opString.includes("*")) {
       let re = /\*/g;
-      console.log("found a mult case");
       return opString.replace(re, ` x `);
     }
     return operator;
@@ -189,9 +189,9 @@ function Calculator() {
           : operand1 + handleExponentOperatorDisplay(operator) + operand2}
       </div>
       <div className="calculatorButtons">
-        {operator_array.map((element) => {
+        {operator_array_display.map((element) => {
           return (
-            <Button // buttons for +, -, *, /, ** in a loop
+            <Button // buttons for +, -  in a loop
               key={element}
               display={element}
               containerClassName={"operatorContainer"}
