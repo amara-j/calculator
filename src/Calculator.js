@@ -184,11 +184,9 @@ function Calculator() {
   return (
     <div className="App">
       <div className="calculatorDisplay">
-        {/* <p className="result"> */}
         {isExpressionEvaluated
           ? checkResultError(eval(handleIncompleteResult(result)))
           : operand1 + handleExponentOperatorDisplay(operator) + operand2}
-        {/* </p> */}
       </div>
       <div className="calculatorButtons">
         {operator_array.map((element) => {
