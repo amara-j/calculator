@@ -77,10 +77,15 @@ function Calculator() {
   };
 
   const handleExponentOperatorDisplay = (operator) => {
-    if (operator.length != 0) {
-      const opString = operator.toString();
+    const opString = operator.toString();
+    if (opString.includes("**")) {
       let re = /\*\*/g;
       return opString.replace(re, `^`);
+    }
+    if (opString.includes("*")) {
+      let re = /\*/g;
+      console.log("found a mult case");
+      return opString.replace(re, ` x `);
     }
     return operator;
   };
@@ -159,7 +164,7 @@ function Calculator() {
       operatorButtonOnClick(e.key);
     }
     //enter
-    else if (e.code === "Enter") {
+    else if (e.code === "Enter" || e.key === "=") {
       equalsButtonOnClick();
     }
     //delete
@@ -179,9 +184,11 @@ function Calculator() {
   return (
     <div className="App">
       <div className="calculatorDisplay">
+        {/* <p className="result"> */}
         {isExpressionEvaluated
           ? checkResultError(eval(handleIncompleteResult(result)))
           : operand1 + handleExponentOperatorDisplay(operator) + operand2}
+        {/* </p> */}
       </div>
       <div className="calculatorButtons">
         {operator_array.map((element) => {
