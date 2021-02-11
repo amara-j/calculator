@@ -81,12 +81,18 @@ html {
   margin: 5px 5px 5px 5px;
   width: 190px;
   height: 90px;
-  border: 4px solid white;
+  border: 4px solid greenyellow;
   line-height: 90px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 
 .equalsContainer {
-  border-color: skyblue;
+  border-color: #ffb921;
   font-size: 150px;
   width: 190px;
   height: 190px;
@@ -95,21 +101,21 @@ html {
 }
 
 .clearContainer {
-  border-color: skyblue;
+  border-color: #ffb921;
   grid-column: 1;
   grid-row: 1;
 }
 
 .decimalContainer {
-  border-color: greenyellow;
+  border-color: #03c0ff;
 }
 
 .operatorContainer {
-  border-color: hotpink;
+  border-color: #d92189;
 }
 
 .negativeContainer {
-  border-color: greenyellow;
+  border-color: #03c0ff;
 }
 
 /* grab operators that display strangely and change their display text */
