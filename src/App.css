@@ -86,6 +86,7 @@ html {
 
 .equalsContainer {
   border-color: skyblue;
+  font-size: 150px;
   width: 190px;
   height: 190px;
   grid-column: 4;

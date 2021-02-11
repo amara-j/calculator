@@ -6,7 +6,7 @@ function Calculator() {
   const [operator, updateOperator] = useState("");
   const [operand2, updateOperand2] = useState("");
   const [result, updateResult] = useState(0);
-  const operator_array = ["+", "-", "*", "/", "**"];
+  const operator_array = ["+", "-"];
   const [isExpressionEvaluated, toggleEvaluatedState] = useState(false);
 
   const numberButtonOnClick = (i) => {
@@ -195,12 +195,43 @@ function Calculator() {
               key={element}
               display={element}
               containerClassName={"operatorContainer"}
+              containerID={element}
               onClick={() => {
                 operatorButtonOnClick(element);
               }}
             />
           );
         })}
+        <Button // for *
+          key={"*"}
+          display={"X"}
+          containerClassName={"operatorContainer"}
+          containerID={"*"}
+          onClick={() => {
+            operatorButtonOnClick("*");
+          }}
+        />
+
+        <Button // button for /
+          key={"/"}
+          display={"÷"}
+          containerClassName={"operatorContainer"}
+          containerID={"/"}
+          onClick={() => {
+            operatorButtonOnClick("/");
+          }}
+        />
+
+        <Button // button for **
+          key={"**"}
+          display={"xⁿ"}
+          containerClassName={"operatorContainer"}
+          containerID={"**"}
+          onClick={() => {
+            operatorButtonOnClick("**");
+          }}
+        />
+
         {loopNumberComponents()}
         <Button // decimal point button
           display={"."}
