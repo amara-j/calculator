@@ -3,7 +3,7 @@ html {
 }
 
 .App {
-  margin-top: 5vh;
+  margin-top: 3vh;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -14,22 +14,13 @@ html {
 .calculatorButtons {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(4, 130px);
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 100px);
   justify-items: center;
 }
 
 .calculatorDisplay {
   text-align: center;
-}
-
-.clearContainer {
-  border: 4px solid skyblue;
-  width: 240px;
-  height: 120px;
-  margin: 5px 5px 5px 5px;
-  grid-column: 1;
-  grid-row: 1;
 }
 
 #number1Container {
@@ -84,53 +75,55 @@ html {
 
 .numberContainer {
   border: 4px solid white;
-  width: 240px;
-  height: 120px;
+  width: 190px;
+  height: 90px;
   margin: 5px 5px 5px 5px;
 }
 .equalsContainer {
   border: 4px solid skyblue;
-  width: 240px;
-  height: 250px;
+  width: 190px;
+  height: 190px;
   margin: 5px 5px 5px 5px;
   grid-column: 4;
   grid-row: 4 / 5;
 }
 
+.clearContainer {
+  border: 4px solid skyblue;
+  width: 190px;
+  height: 90px;
+  margin: 5px 5px 5px 5px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .decimalContainer {
   border: 4px solid greenyellow;
-  width: 240px;
-  height: 120px;
+  width: 190px;
+  height: 90px;
   margin: 5px 5px 5px 5px;
 }
 
 .operatorContainer {
   border: 4px solid hotpink;
-  width: 240px;
-  height: 120px;
+  width: 190px;
+  height: 90px;
   margin: 5px 5px 5px 5px;
 }
 
 .negativeContainer {
   border: 4px solid greenyellow;
-  width: 240px;
-  height: 120px;
+  width: 190px;
+  height: 90px;
   margin: 5px 5px 5px 5px;
 }
 
 .calculatorDisplay {
   position: relative;
-  border: 4px solid greenyellow;
   text-align: center;
-  width: 990px;
+  width: 80vw;
   overflow-wrap: break-word;
-  min-height: 300px;
+  min-height: 160px;
+  font-size: 80px;
+  line-height: 80px;
 }
-
-/* .result {
-  position: relative;
-  left: 50%;
-  border: 4px solid greenyellow;
-  text-align: center;
-  color: pink;
-} */
